@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	SAX-Expat
-Summary:	XML::SAX::Expat - SAX2 Driver for Expat (XML::Parser)
+Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
 Summary(pl):	XML::SAX::Expat - sterownik SAX2 dla modu³u Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
 Version:	0.37
