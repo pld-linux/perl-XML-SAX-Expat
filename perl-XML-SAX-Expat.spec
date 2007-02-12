@@ -6,7 +6,7 @@
 %define		pdir	XML
 %define		pnam	SAX-Expat
 Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
-Summary(pl):	XML::SAX::Expat - sterownik SAX2 dla modu≥u Expat (XML::Parser)
+Summary(pl.UTF-8):   XML::SAX::Expat - sterownik SAX2 dla modu≈Çu Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
 Version:	0.37
 Release:	1
@@ -28,8 +28,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is an implementation of a SAX2 driver sitting on top of Expat
 (XML::Parser).
 
-%description -l pl
-To jest implementacja sterownika SAX2 w oparciu o modu≥ Expat
+%description -l pl.UTF-8
+To jest implementacja sterownika SAX2 w oparciu o modu≈Ç Expat
 (XML::Parser).
 
 %prep
