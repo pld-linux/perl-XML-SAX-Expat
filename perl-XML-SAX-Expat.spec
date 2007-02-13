@@ -6,7 +6,7 @@
 %define		pdir	XML
 %define		pnam	SAX-Expat
 Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
-Summary(pl.UTF-8):   XML::SAX::Expat - sterownik SAX2 dla modułu Expat (XML::Parser)
+Summary(pl.UTF-8):	XML::SAX::Expat - sterownik SAX2 dla modułu Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
 Version:	0.37
 Release:	1
