@@ -8,13 +8,13 @@
 Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
 Summary(pl.UTF-8):	XML::SAX::Expat - sterownik SAX2 dla modułu Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
-Version:	0.37
+Version:	0.39
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c48024d363a1ff9abaf8f9af592d38cd
+# Source0-md5:	a31400a29eae0eec74650bd06dbc823f
 BuildRequires:	perl-XML-NamespaceSupport >= 0.03
 BuildRequires:	perl-XML-Parser >= 2.27
 BuildRequires:	perl-XML-SAX >= 0.03
