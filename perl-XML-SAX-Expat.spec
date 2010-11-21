@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
+
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	XML
 %define		pnam	SAX-Expat
@@ -9,17 +9,17 @@ Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
 Summary(pl.UTF-8):	XML::SAX::Expat - sterownik SAX2 dla modułu Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
 Version:	0.40
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/XML/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ca58d1e26c437b31c52456b4b4ae5c4a
 URL:		http://search.cpan.org/dist/XML-SAX-Expat/
+BuildRequires:	perl(XML::SAX::Base) >= 1.00
 BuildRequires:	perl-XML-NamespaceSupport >= 0.03
 BuildRequires:	perl-XML-Parser >= 2.27
 BuildRequires:	perl-XML-SAX >= 0.03
-BuildRequires:	perl(XML::SAX::Base) >= 1.00
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -61,7 +61,7 @@ umask 022
 %{__perl} -MXML::SAX -e "XML::SAX->add_parser(q(XML::SAX::Expat))->save_parsers()"
 
 %postun
-if [ "$1" = "0" ]; then
+if [ "$1" = "0" ] && [ -x %{__perl} ]; then
 	umask 022
 	%{__perl} -MXML::SAX -e "XML::SAX->remove_parser(q(XML::SAX::Expat))->save_parsers()"
 fi
