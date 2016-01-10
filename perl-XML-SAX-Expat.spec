@@ -8,13 +8,13 @@
 Summary:	XML::SAX::Expat - SAX2 driver for Expat (XML::Parser)
 Summary(pl.UTF-8):	XML::SAX::Expat - sterownik SAX2 dla modułu Expat (XML::Parser)
 Name:		perl-XML-SAX-Expat
-Version:	0.40
-Release:	2
+Version:	0.51
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/XML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ca58d1e26c437b31c52456b4b4ae5c4a
+# Source0-md5:	74c540095d84e3f054d1f8703a73ef76
 URL:		http://search.cpan.org/dist/XML-SAX-Expat/
 BuildRequires:	perl(XML::SAX::Base) >= 1.00
 BuildRequires:	perl-XML-NamespaceSupport >= 0.03
@@ -22,6 +22,7 @@ BuildRequires:	perl-XML-Parser >= 2.27
 BuildRequires:	perl-XML-SAX >= 0.03
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,8 +38,7 @@ To jest implementacja sterownika SAX2 w oparciu o moduł Expat
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 # we want to add_parser in post, not on make install
-head -n 23 Makefile.PL > Makefile.PL.tmp
-mv -f Makefile.PL.tmp Makefile.PL
+%{__sed} -i -e '/^sub MY::install/,/^}/ s/^/#/' Makefile.PL
 
 %build
 %{__perl} Makefile.PL \
@@ -70,4 +70,4 @@ fi
 %defattr(644,root,root,755)
 %doc Changes
 %{perl_vendorlib}/XML/SAX/Expat.pm
-%{_mandir}/man3/*
+%{_mandir}/man3/XML::SAX::Expat.3pm*
